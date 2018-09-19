@@ -1,22 +1,4 @@
-# Multiple Blink
-Now that we have blinked at least 1 LED, what about blinking multiple LEDS at the same time? The minimum that you need to develop is blinking at least two LEDs at two different rates. Although I am not going to give you a speed, you should probably pick a rate which is visible to a standard human. I really hope that you take this further and perform some of the extra work for this part of the lab exercise.
+MSP430F55229 - For this multiple blink method I implemented a simple method of having two LEDs blink at different speeds. I use BIT1.0 and BIT4.7 as the LEDs for this one which means I had to set them as outputs. I did that using the P1DIR and P4DIR to set them as outputs. I then created two counters called i1 and i2. Every clock cycle the counter will increment. For i1 once it reaches 25000 the if statement will execute and the P1.0 LED will be toggled on and off. The value i1 is also set back to 0 so that it can increment back up to the 25000 value and toggle the LED again. The i2 counter works in the same way except the value is 10000. When 10000 gets hit the PIN4.7 LED gets toggled then it gets reset to 0 so it will increment back to that value again. 
 
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
-* MSP430G2553
-* MSP(FILL IN WITH WHAT YOU ARE USING)
-
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise.
-
-## Extra Work
-When you take a look at the development boards, you are limited to what is built into the platform.
-
-### Even More LEDs
-Since up to this point you should have hopefully noticed that you are simply just controlling each pin on your processor. So... what is keeping you from putting an LED on each pin? Can you actually control the speed of each of these LEDs?
-
-### Patterned Lights
-If you can control a ton of LEDs, what is keeping you from having a little fun? Why not try and make something like a moving face or other moving object in lights. *CAUTION* I would only do this if you have finished the rest of the lab.
-
-### UART Pattern Control
-If you have been using UART, could you set which LEDs are on or off based off some UART command? Would you want to send an Array over UART such as [1 0 1 0] or would you want to send a byte that corresponds to the status? Can you not only say which LEDs are on, but also tell them to blink at a particular rate if they were on (so LED1 Blink every 100ms)?
+MSP430G2553 - For this multiple blink method is similar to the method for the other board besides the difference in the pins used for this board. The LEDs used for this board were P1.6 and P1.0, and I set them as outputs using P1DIR. I created two counters in this one two called i1 and i2. i1 and i2 were designed to increment until they hit a certain value to then execute to separate if statements. These if statements triggered the respective LEDs at two separate speeds than each other. After the LED is toggled the counter is set back to 0 so it can increment again. 
