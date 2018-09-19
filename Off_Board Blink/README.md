@@ -1,1 +1,4 @@
 MSP430G2253 - For this offboard blink I used the same setup that I had for the multiple blink so I could have two LEDs blinking simultaneously on my breadboard. The LEDs were located at P1.0 and P1.6 and they were both made outputs by P1DIR. I created two counters to increment within an infinite loop until they hit a certain value, executed an if statment, then reset. When the values were hit they would toggle the LEDs on or off. I programmed the code onto my microcontroller then moved it over to the breadboard. I put 430 Ohm resistors in series with the LEDs so I didn't brown out my microprocessor. I also was required to implement the reset circuit in my board also. The rest of it just consisted of connecting the power supply and voltage from the board to my breadboard. Then putting wires in the correct place to have my function correctly. The GIF of the breadboard setup is shown below.
+
+
+![](Attachment-1.gif)
