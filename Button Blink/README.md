@@ -1,18 +1,3 @@
-# Button Blink
-Now that you have looked at blinking the LED from some built in delay, but what if we wanted to control the state of the LED by a button? You may think "Why would I need a Microcontroller to perform the job of a switch?". And that is where you come in. The bare minimum for this part of the lab is to essentially replicate a switch with your development board.
+MSP430G2253 - The button was located at P1.3, and the LED was located at P1.0. Using P1DIR I set P1.3 to 0 to make it an input and P1.0 to 1 to make it an output. Inside a while loop was an if else statement that was the functionality for the button press. For the G2553 the button sits high or at 1 when it is not pressed and low or 0 when it is pressed. The if statment condition was if((P1IN & BIT3) == 0), meaning if the button was off 1 would not equal 0, but if it was 1 then the if statement would execute. The if statment toggled the LED on and the else statment toggled the LED off.
 
-# YOU NEED TO CREATE THE FOLLOWING FOLDERS
-* MSP430G2553
-* MSP(FILL IN THE PROCESSOR YOU ARE USING)
-
-## README
-Remember to replace this README with your README once you are ready to submit. I would recommend either making a copy of this file or taking a screen shot. There might be a copy of all of these README's in a folder on the top level depending on the exercise. Make sure you talk about how your button is configured (momentary or continuous. Normally open or closed. Does the button press indicate when the LED should be on or off.)
-
-## Extra Work
-What can we do to make this a little bit more worthy of needing a microcontroller.
-
-### Button Based Speed Control
-Much like the UART controlled speed, what if you could cycle between speeds based on a button press? The speed could progress through a cycle of "Off-Slow-Medium-Fast" looping back when you hit the end.
-
-### Color Change
-What if upon a button press, the LED which was blinking changed. Some of the development boards contain two LEDs, so you could swap between a Red and a Green LED.
+MSP430F5529 - The button was located at P2.1. The LED was located at P4.7. Using P2DIR and P4DIR I set the LED to 1 making it an output and the button to 0 making it an input. In order to use the button I had to enable the pullup resistor at P2.1. The logic for this is the exact opposite from the other board. The button sits low or 0 when it isn't pushed. So the if statment was if((P2IN & BIT1) != 0), meaning when the button is pressed the statment will be 1 which does not equal 0 which makes the if statement execute. The if statment turns the LED on and when the button isnt pressed it turns the LED off. 
